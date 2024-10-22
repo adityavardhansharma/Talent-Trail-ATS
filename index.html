@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentTrail - AI-Powered Resume Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="container header__container">
+        <h1 class="header__logo">TalentTrail</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="ats.html" class="nav__link">Reset</a></li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <div class="container">
+        <section class="hero">
+            <h2 class="hero__title">AI-Powered Resume Analysis</h2>
+            <p class="hero__subtitle">Unlock your potential with advanced job matching technology</p>
+        </section>
+
+        <section class="analysis-tool">
+            <div class="analysis-tool__input">
+                <div class="input-group">
+                    <label for="jobDescription" class="input-label">Job Description</label>
+                    <textarea id="jobDescription" class="input-field input-field--textarea" placeholder="Enter the job description here..."></textarea>
+                </div>
+                <div class="input-group">
+
+                    <label for="resumeUpload" class="input-label">Upload Resume (PDF)</label>
+                    <div class="file-upload">
+                        <input type="file" id="resumeUpload" accept=".pdf" class="file-upload__input">
+                        <label for="resumeUpload" class="file-upload__label">Choose File</label>
+                        <span id="uploadedFile" class="file-upload__name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analysis-tool__actions">
+                <button id="tellMeAboutResume" class="btn btn--primary">Analyze Resume</button>
+                <button id="createSkillMatchTable" class="btn btn--secondary">Skill Match Table</button>
+                <button id="percentageMatch" class="btn btn--secondary">Percentage Match</button>
+                <button id="projectAndCertification" class="btn btn--secondary">Projects & Certifications</button>
+            </div>
+
+            <div id="loadingIndicator" class="loading-indicator hidden">
+                <div class="loading-indicator__spinner"></div>
+                <p class="loading-indicator__text">Our TrailBot is Analysing Your Resume</p>
+                <p class="loading-indicator__text">Please Wait...</p>
+            </div>
+
+            <div id="responseContainer" class="response-container hidden">
+                <h3 class="response-container__title">Analysis Results</h3>
+                <div id="response" class="response-container__content"></div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>&copy; TalentTrail - 7th Sem Minor Project.</p>
+        
+        <p>Aditya Vardhan Sharma | Akhilesh Sharma</p>
+    </div>
+</footer>
+
+<script src="scripte.js"></script>
+</body>
+</html>
