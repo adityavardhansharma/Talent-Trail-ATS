@@ -1,5 +1,5 @@
 // Replace with your actual API key
-const API_KEY = 'AIzaSyDxz1Uy-033ywvHJQOhpMwvPTgZg-8yGmc';
+const API_KEY = 'YOUR API KEY';
 const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 let pdfContent = null;
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     percentageMatch.addEventListener('click', () => handleButtonClick('Percentage Match'));
     projectAndCertification.addEventListener('click', () => handleButtonClick('Project & Certification'));
 
-    // Animate buttons on hover
+   
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
         button.addEventListener('mouseenter', () => {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animate hero section on load
+    
     gsap.from('.hero__title', { opacity: 0, y: 50, duration: 1, ease: 'power3.out' });
     gsap.from('.hero__subtitle', { opacity: 0, y: 50, duration: 1, ease: 'power3.out', delay: 0.3 });
 });
@@ -42,7 +42,7 @@ function handleFileUpload(event) {
 
         const reader = new FileReader();
         reader.onload = function(e) {
-            pdfContent = e.target.result.split(',')[1]; // Get base64 content
+            pdfContent = e.target.result.split(',')[1];
         };
         reader.readAsDataURL(file);
     }
@@ -63,7 +63,7 @@ async function handleButtonClick(buttonType) {
         const responseElement = document.getElementById('response');
         responseElement.innerHTML = marked.parse(response);
 
-        // Animate the response container
+
         gsap.from(responseElement, { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' });
     } catch (error) {
         console.error('Error:', error);
